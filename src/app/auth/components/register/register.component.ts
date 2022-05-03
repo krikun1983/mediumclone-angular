@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
+
 import { registerAction } from '../../store/actions/register.action';
 
 @Component({
@@ -18,14 +19,16 @@ export class RegisterComponent implements OnInit {
   }
 
   initializeForm(): void {
+    console.log('initializeForm');
     this.form = this.fb.group({
-      username: '',
-      email: '',
-      password: '',
+      username: ['', Validators.required],
+      email: ['', Validators.required],
+      password: ['', Validators.required],
     });
   }
 
   onSubmit(): void {
+    console.log('submit', this.form.value, this.form.valid);
     this.store.dispatch(registerAction(this.form.value));
   }
 }
