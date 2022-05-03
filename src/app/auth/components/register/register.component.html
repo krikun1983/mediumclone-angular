@@ -32,7 +32,7 @@
             </fieldset>
             <button
               class="btn btn-lg btn-primary pull-xs-right"
-              [disabled]="!form.valid"
+              [disabled]="isSubmitting$ | async"
               type="submit">
               Sign up
             </button>
