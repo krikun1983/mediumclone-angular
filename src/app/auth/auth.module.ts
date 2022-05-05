@@ -7,6 +7,7 @@ import { StoreModule } from '@ngrx/store';
 
 import { RegisterComponent } from './components/register/register.component';
 import { reducer } from './store/reducers';
+import { AuthService } from './services/auth.service';
 
 const routes: Routes = [{ path: 'register', component: RegisterComponent }];
 
@@ -18,5 +19,6 @@ const routes: Routes = [{ path: 'register', component: RegisterComponent }];
     ReactiveFormsModule,
     StoreModule.forFeature('auth', reducer),
   ],
+  providers: [AuthService],
 })
 export class AuthModule {}
