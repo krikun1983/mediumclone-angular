@@ -4,12 +4,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { StoreModule } from '@ngrx/store';
-
-import { RegisterComponent } from './components/register/register.component';
-import { reducer } from './store/reducers';
-import { AuthService } from './services/auth.service';
 import { EffectsModule } from '@ngrx/effects';
-import { RegisterEffect } from './store/effects/register.effect';
+
+import { RegisterComponent } from 'src/app/auth/components/register/register.component';
+import { reducer } from 'src/app/auth/store/reducers';
+import { AuthService } from 'src/app/auth/services/auth.service';
+import { RegisterEffect } from 'src/app/auth/store/effects/register.effect';
 
 const routes: Routes = [{ path: 'register', component: RegisterComponent }];
 
