@@ -1,4 +1,4 @@
-import { createReducer, on, Action } from '@ngrx/store';
+import { createReducer, on } from '@ngrx/store';
 
 import { AuthStateInterface } from 'src/app/auth/types/auth-state.interface';
 import {
@@ -14,7 +14,7 @@ const initialState: AuthStateInterface = {
   validationErrors: null,
 };
 
-const authReducer = createReducer(
+export const authReducer = createReducer(
   initialState,
   on(
     registerAction,
@@ -42,7 +42,3 @@ const authReducer = createReducer(
     })
   )
 );
-
-export function reducer(state: AuthStateInterface, action: Action) {
-  return authReducer(state, action);
-}
